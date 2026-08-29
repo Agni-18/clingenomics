@@ -1,0 +1,17 @@
+##fileformat=VCFv4.2
+##reference=GRCh38
+##INFO=<ID=gnomAD_AF,Number=A,Type=Float,Description="gnomAD global allele frequency">
+##INFO=<ID=gnomAD_AF_grpmax,Number=A,Type=Float,Description="gnomAD grpmax allele frequency">
+##INFO=<ID=gnomAD_AC,Number=A,Type=Integer,Description="gnomAD allele count">
+##INFO=<ID=REVEL,Number=A,Type=Float,Description="REVEL missense score">
+##INFO=<ID=CADD_PHRED,Number=A,Type=Float,Description="CADD phred score">
+##INFO=<ID=SpliceAI,Number=.,Type=String,Description="SpliceAIv1.3. Format: ALLELE|SYMBOL|DS_AG|DS_AL|DS_DG|DS_DL|DP_AG|DP_AL|DP_DG|DP_DL">
+##INFO=<ID=CLNSIG,Number=.,Type=String,Description="ClinVar clinical significance">
+##INFO=<ID=CSQ,Number=.,Type=String,Description="Consequence annotations from Ensembl VEP. Format: Allele|Consequence|IMPACT|SYMBOL|Gene|Feature_type|Feature|BIOTYPE|HGVSc|HGVSp">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+13	32340300	.	G	A	500	PASS	gnomAD_AC=0;SpliceAI=A|BRCA2|0.02|0.00|0.91|0.05|10|-2|3|7;CSQ=A|splice_donor_variant|HIGH|BRCA2|ENSG00000139618|Transcript|ENST00000380152|protein_coding|c.7008G>A|
+17	43093500	.	C	T	500	PASS	gnomAD_AF=0.0000021;gnomAD_AF_grpmax=0.0000090;gnomAD_AC=1;REVEL=0.962;CADD_PHRED=32;CSQ=T|missense_variant|MODERATE|BRCA1|ENSG00000012048|Transcript|ENST00000357654|protein_coding|c.5123C>T|p.Ala1708Val
+2	47806600	.	A	G	500	PASS	gnomAD_AF=0.121;gnomAD_AF_grpmax=0.134;gnomAD_AC=18422;REVEL=0.211;CSQ=G|missense_variant|MODERATE|MSH2|ENSG00000095002|Transcript|ENST00000233146|protein_coding|c.965A>G|p.Asn322Ser
+3	37012000	.	T	C	500	PASS	gnomAD_AF=0.019;gnomAD_AF_grpmax=0.024;gnomAD_AC=3600;REVEL=0.081;CSQ=C|missense_variant|MODERATE|MLH1|ENSG00000076242|Transcript|ENST00000231790|protein_coding|c.655T>C|p.Ser219Pro
+7	117559600	.	C	T	500	PASS	gnomAD_AF=0.0003;gnomAD_AF_grpmax=0.0005;gnomAD_AC=88;SpliceAI=T|CFTR|0.01|0.00|0.02|0.01|5|8|-4|2;CSQ=T|synonymous_variant|LOW|CFTR|ENSG00000001626|Transcript|ENST00000003084|protein_coding|c.1408C>T|p.%3D
+11	108259000	.	AG	A	500	PASS	gnomAD_AC=0;CSQ=-|frameshift_variant|HIGH|ATM|ENSG00000149311|Transcript|ENST00000278616|protein_coding|c.1402delG|p.Val468fs

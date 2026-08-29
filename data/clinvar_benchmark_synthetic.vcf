@@ -1,0 +1,32 @@
+##fileformat=VCFv4.2
+##reference=GRCh38
+##SOURCE=SYNTHETIC — NOT REAL CLINVAR DATA. Illustrative fixture to exercise the
+##SOURCE=benchmark harness in CI. For a real concordance number, replace this with
+##SOURCE=an annotated ClinVar release VCF (CLNSIG/CLNREVSTAT + gnomAD/REVEL/SpliceAI).
+##INFO=<ID=gnomAD_AF,Number=A,Type=Float,Description="gnomAD global AF">
+##INFO=<ID=gnomAD_AF_grpmax,Number=A,Type=Float,Description="gnomAD grpmax AF">
+##INFO=<ID=gnomAD_AC,Number=A,Type=Integer,Description="gnomAD allele count">
+##INFO=<ID=REVEL,Number=A,Type=Float,Description="REVEL score">
+##INFO=<ID=SpliceAI,Number=.,Type=String,Description="Format: ALLELE|SYMBOL|DS_AG|DS_AL|DS_DG|DS_DL|DP_AG|DP_AL|DP_DG|DP_DL">
+##INFO=<ID=CLNSIG,Number=.,Type=String,Description="ClinVar clinical significance">
+##INFO=<ID=CLNREVSTAT,Number=.,Type=String,Description="ClinVar review status">
+##INFO=<ID=CSQ,Number=.,Type=String,Description="Format: Allele|Consequence|IMPACT|SYMBOL|Gene|Feature_type|Feature|BIOTYPE|HGVSc|HGVSp">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+17	43000001	.	C	T	.	.	gnomAD_AC=0;REVEL=0.965;CLNSIG=Pathogenic;CLNREVSTAT=reviewed_by_expert_panel;CSQ=T|missense_variant|MODERATE|BRCA1|G|Transcript|NM1|protein_coding|c.100C>T|p.Arg34Cys
+17	43000002	.	G	A	.	.	gnomAD_AC=0;SpliceAI=A|BRCA1|0.01|0.00|0.95|0.02|1|2|3|4;CLNSIG=Pathogenic;CLNREVSTAT=reviewed_by_expert_panel;CSQ=A|splice_donor_variant|HIGH|BRCA1|G|Transcript|NM1|protein_coding|c.200+1G>A|
+13	32000003	.	AG	A	.	.	gnomAD_AC=0;CLNSIG=Pathogenic;CLNREVSTAT=criteria_provided,_multiple_submitters,_no_conflicts;CSQ=-|frameshift_variant|HIGH|BRCA2|G|Transcript|NM1|protein_coding|c.300delG|p.Val100fs
+2	47000004	.	C	T	.	.	gnomAD_AC=0;REVEL=0.942;CLNSIG=Likely_pathogenic;CLNREVSTAT=criteria_provided,_multiple_submitters,_no_conflicts;CSQ=T|missense_variant|MODERATE|MSH2|G|Transcript|NM1|protein_coding|c.400C>T|p.Pro134Ser
+3	37000005	.	G	A	.	.	gnomAD_AC=0;REVEL=0.889;CLNSIG=Likely_pathogenic;CLNREVSTAT=reviewed_by_expert_panel;CSQ=A|missense_variant|MODERATE|MLH1|G|Transcript|NM1|protein_coding|c.500G>A|p.Gly167Asp
+11	108000006	.	C	T	.	.	gnomAD_AC=0;SpliceAI=T|ATM|0.00|0.00|0.88|0.10|1|2|3|4;CLNSIG=Likely_pathogenic;CLNREVSTAT=criteria_provided,_multiple_submitters,_no_conflicts;CSQ=T|splice_donor_variant|HIGH|ATM|G|Transcript|NM1|protein_coding|c.600+1G>A|
+7	117000007	.	A	G	.	.	gnomAD_AF=0.152;gnomAD_AF_grpmax=0.168;gnomAD_AC=21000;REVEL=0.180;CLNSIG=Benign;CLNREVSTAT=reviewed_by_expert_panel;CSQ=G|missense_variant|MODERATE|CFTR|G|Transcript|NM1|protein_coding|c.700A>G|p.Ile234Val
+1	45000008	.	T	C	.	.	gnomAD_AF=0.098;gnomAD_AF_grpmax=0.110;gnomAD_AC=15000;REVEL=0.121;CLNSIG=Benign;CLNREVSTAT=criteria_provided,_multiple_submitters,_no_conflicts;CSQ=C|missense_variant|MODERATE|MUTYH|G|Transcript|NM1|protein_coding|c.800T>C|p.Ser267Pro
+16	23000009	.	G	A	.	.	gnomAD_AF=0.031;gnomAD_AF_grpmax=0.040;gnomAD_AC=5200;REVEL=0.095;CLNSIG=Likely_benign;CLNREVSTAT=criteria_provided,_multiple_submitters,_no_conflicts;CSQ=A|missense_variant|MODERATE|PALB2|G|Transcript|NM1|protein_coding|c.900G>A|p.Val300Ile
+2	47000010	.	C	T	.	.	gnomAD_AF=0.022;gnomAD_AF_grpmax=0.028;gnomAD_AC=3400;REVEL=0.070;CLNSIG=Likely_benign;CLNREVSTAT=reviewed_by_expert_panel;CSQ=T|missense_variant|MODERATE|MSH6|G|Transcript|NM1|protein_coding|c.1000C>T|p.Arg334Cys
+17	43000011	.	G	A	.	.	gnomAD_AF=0.0003;gnomAD_AF_grpmax=0.0005;SpliceAI=A|BRCA1|0.01|0.00|0.02|0.01|1|2|3|4;CLNSIG=Likely_benign;CLNREVSTAT=criteria_provided,_multiple_submitters,_no_conflicts;CSQ=A|synonymous_variant|LOW|BRCA1|G|Transcript|NM1|protein_coding|c.1100C>T|p.%3D
+13	32000012	.	C	T	.	.	gnomAD_AC=0;REVEL=0.955;CLNSIG=Pathogenic;CLNREVSTAT=criteria_provided,_multiple_submitters,_no_conflicts;CSQ=T|missense_variant|MODERATE|BRCA2|G|Transcript|NM1|protein_coding|c.1200C>T|p.Arg400Trp
+4	89000013	.	G	A	.	.	gnomAD_AF=0.061;gnomAD_AF_grpmax=0.072;gnomAD_AC=9000;REVEL=0.150;CLNSIG=Benign;CLNREVSTAT=criteria_provided,_multiple_submitters,_no_conflicts;CSQ=A|missense_variant|MODERATE|GATA3|G|Transcript|NM1|protein_coding|c.1300G>A|p.Ala434Thr
+11	108000014	.	CA	C	.	.	gnomAD_AC=0;CLNSIG=Pathogenic;CLNREVSTAT=reviewed_by_expert_panel;CSQ=-|frameshift_variant|HIGH|ATM|G|Transcript|NM1|protein_coding|c.1400delA|p.Lys467fs
+5	112000015	.	C	T	.	.	gnomAD_AC=0;CLNSIG=Pathogenic;CLNREVSTAT=reviewed_by_expert_panel;CSQ=T|stop_gained|HIGH|APC|G|Transcript|NM1|protein_coding|c.1500C>T|p.Arg500Ter
+2	47000016	.	G	A	.	.	gnomAD_AF=0.0000;gnomAD_AC=0;REVEL=0.930;CLNSIG=Likely_pathogenic;CLNREVSTAT=criteria_provided,_multiple_submitters,_no_conflicts;CSQ=A|missense_variant|MODERATE|MSH2|G|Transcript|NM1|protein_coding|c.1600G>A|p.Gly534Ser
+3	37000017	.	G	T	.	.	gnomAD_AF=0.041;gnomAD_AF_grpmax=0.052;gnomAD_AC=7000;REVEL=0.110;CLNSIG=Benign;CLNREVSTAT=criteria_provided,_multiple_submitters,_no_conflicts;CSQ=T|missense_variant|MODERATE|MLH1|G|Transcript|NM1|protein_coding|c.1700G>T|p.Gly567Val
+17	43000018	.	G	A	.	.	gnomAD_AF=0.075;gnomAD_AF_grpmax=0.088;gnomAD_AC=11000;REVEL=0.140;CLNSIG=Benign;CLNREVSTAT=reviewed_by_expert_panel;CSQ=A|missense_variant|MODERATE|BRCA1|G|Transcript|NM1|protein_coding|c.1800G>A|p.Ser600Asn
