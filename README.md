@@ -1,27 +1,27 @@
 # Clinical Genomics Interpretation Engine
 
-> Turning annotated DNA/RNA variants into ACMG/AMP-classified, report-ready calls — a multi-modal germline + somatic interpretation engine, validated for concordance against ClinVar with a zero contradiction rate.
+> Turning annotated DNA/RNA variants into ACMG/AMP-classified, report-ready calls — a multi-modal germline + somatic interpretation engine with a ClinVar concordance benchmark harness.
 
 ---
 
 ## Why This Project
 
-Interpreting variants is where a diagnostic genomics workflow gets genuinely challenging. I built an end-to-end interpretation engine that takes an annotated VCF and applies the ACMG/AMP framework consistently, with every piece of evidence traceable for clinical review. It proposes ClinGen-calibrated ACMG criteria, works through the PVS1 decision tree, incorporates RNA functional evidence, and classifies both germline variants using points-based ACMG and somatic variants using AMP/ASCO/CAP tiers. The pipeline then generates a clinical report and benchmarks its classifications against ClinVar. 62 tests, all CI-checked.
+Interpreting variants is where a diagnostic genomics workflow gets genuinely challenging. I built an end-to-end interpretation engine that takes an annotated VCF and applies the ACMG/AMP framework consistently, with every piece of evidence traceable for clinical review. It proposes ClinGen-calibrated ACMG criteria, works through the PVS1 decision tree, incorporates RNA functional evidence, and classifies both germline variants using points-based ACMG and somatic variants using AMP/ASCO/CAP tiers. The pipeline then generates a clinical report and includes a ClinVar concordance harness. 62 tests, all CI-checked.
 
 ---
 
 ## Key Results
 
-### ClinVar concordance benchmark
-Scored the engine against expert-reviewed ClinVar classifications, reporting a mismatch *taxonomy* rather than a naive accuracy number:
+### ClinVar concordance harness
+The benchmark module scores engine calls against ClinVar classifications and reports a mismatch *taxonomy* rather than a single accuracy number:
 
-| Metric | Result | What it means |
-|---|---|---|
-| **Contradiction rate** | **0%** | Engine never called the opposite direction to expert consensus |
-| Clinical concordance | direction-level agreement (P↔LP, B↔LB) | actionable-call agreement |
-| Mismatch taxonomy | undercall / overcall / **contradiction** | disagreements sorted by *type*, not just counted |
+| Mismatch type | Meaning |
+|---|---|
+| Undercall | Engine is more conservative than ClinVar (for example VUS where ClinVar says Likely Pathogenic) |
+| Overcall | Engine is more aggressive than ClinVar |
+| Contradiction | Engine calls the opposite direction to ClinVar (pathogenic side vs. benign side) |
 
-Every disagreement was a **conservative undercall** (engine → VUS where evidence from a VCF row alone was insufficient), never a contradiction, the safety property a clinical pipeline needs.
+> **Status:** the committed demo (`python -m clingenomics.benchmark.demo`) runs on an 18-variant synthetic fixture (`data/clinvar_benchmark_synthetic.vcf`). It exercises the harness and its mismatch taxonomy and is **not** a validation against real ClinVar data. A run on an annotated ClinVar release is the next step.
 
 ### Engine capabilities
 - **Points-based ACMG germline** - ClinGen/Tavtigian framework (VS 8 / S 4 / M 2 / Sup 1); P ≥10, LP 6–9, VUS 0–5, LB −1…−6, B ≤−7; BA1 override; conflict flagging.
@@ -81,7 +81,7 @@ The engine **refuses to overcall**: a truncating variant stays VUS until NMD is 
 
 **4. Somatic tiering** - AMP/ASCO/CAP 2017 four-tier by clinical actionability, with OncoKB level → evidence-level mapping, kept separate from germline logic.
 
-**5. Validation** - engine output compared to ClinVar CLNSIG (filtered by review-star level), scored as a confusion matrix + mismatch taxonomy.
+**5. Validation** - engine output compared to ClinVar CLNSIG (filtered by review-star level), scored as a confusion matrix + mismatch taxonomy (the demo uses a synthetic fixture).
 
 ---
 
